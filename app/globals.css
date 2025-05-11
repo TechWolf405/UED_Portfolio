@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Portfolio Theme Colors */
+  --color-downy: #63c3ca;
+  --color-jacarta: #36306f;
+  --color-careys-pink: #caa0b2;
+  --color-deluge: #8866a9;
+  --color-wedgewood: #5381a1;
+  --color-affair: #624590;
+  --color-chambray: #3a5b86;
+  --color-scampi: #695fa6;
+  --color-ship-cove: #7d93c6;
+  --color-victoria: #4e428d;
+  --color-background: #0c0c1d;
+  
+  /* Custom utility classes */
+  --my-gradient: linear-gradient(to right, var(--color-jacarta), var(--color-scampi));
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background);
+    color: white;
+    transition: all 0.4s ease-in-out;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  
+  /* Page transition animations */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+  
+  .page-exit {
+    opacity: 1;
+  }
+  
+  .page-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  
+  /* Progress bar styling */
+  .progress-container {
+    position: relative;
+    width: 100%;
+    height: 0.45rem;
+    background-color: #ddd;
+    border-radius: 20px;
+  }
+  
+  .progress-span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--my-gradient);
+  }
+  
+  /* Custom Button Styling */
+  .main-btn {
+    position: relative;
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-scampi);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .btn-icon {
+    background-color: var(--color-scampi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .btn-text {
+    padding: 0 2rem;
+  }
+  
+  /* Timeline styling */
+  .timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    border-left: 1px solid var(--color-scampi);
+  }
+  
+  .tl-icon {
+    position: absolute;
+    left: -27px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-scampi);
+  }
+  
+  /* Portfolio hover effect */
+  .hover-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-jacarta);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .portfolio-item:hover .hover-items {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  
+  /* Background text styling */
+  .bg-text {
+    position: absolute;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+  }
 }
