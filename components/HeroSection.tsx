@@ -142,7 +142,7 @@ export default function HeroSection() {
                 icon: FaDownload, 
                 text: 'Download CV', 
                 color: 'bg-[color:var(--color-jacarta-l)] hover:bg-[color:var(--color-jacarta-l)]/80 dark:bg-[color:var(--color-jacarta-d)] dark:hover:bg-[color:var(--color-jacarta-d)]/80',
-                href: '/resume.pdf'
+                href: '/AnushkaJadhav_resume_28032025.pdf'
               },
               { 
                 icon: FaLinkedin, 
@@ -224,12 +224,12 @@ export default function HeroSection() {
               className="relative rounded-full overflow-hidden border-4 border-white/20 dark:border-black/20 shadow-xl w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 z-10"
             >
               <Image 
-                src="/img/hero.png" 
+                src="/photo.jpg" 
                 alt="Portfolio Hero"
                 width={400}
                 height={600}
                 onLoad={() => setIsImageLoaded(true)}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover hover:grayscale-0 transition-all duration-500"
               />
               
               {/* Glow effect on hover */}

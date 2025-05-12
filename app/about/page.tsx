@@ -145,7 +145,7 @@ export default function AboutPage() {
           >
             <h4 className="text-2xl font-bold mb-4 
             text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
-              Information About me
+              Information About Me
             </h4>
             <p className="text-lg mb-6 
             dark:text-gray-300 text-gray-700">
@@ -158,7 +158,7 @@ export default function AboutPage() {
               that challenge me to grow my skills.
             </p>
             <div className="btn-con">
-              <MainButton text="Download CV" icon="fas fa-download" />
+              <MainButton text="Download CV" icon="fas fa-download" href='/AnushkaJadhav_resume_28032025.pdf' />
             </div>
           </motion.div>
           
