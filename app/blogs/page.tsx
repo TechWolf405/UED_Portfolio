@@ -42,12 +42,12 @@ const blogItems = [
 
 export default function BlogsPage() {
   return (
-    <main className="w-full h-full py-16 px-24 overflow-y-auto">
+    <main className="w-full h-full py-16 px-24 overflow-y-auto dark:bg-[color:var(--color-background-d)] bg-[color:var(--color-background-l)] dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
       <div className="container mx-auto">
         <div className="relative mb-16">
           <h2 className="text-4xl font-bold">
-            My <span className="text-[color:var(--color-scampi)]">Blogs</span>
-            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10">My Blogs</span>
+            My <span className="dark:text-[color:var(--color-scampi-d)] text-[color:var(--color-scampi-l)]">Blogs</span>
+            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10 opacity-10 text-6xl whitespace-nowrap dark:text-[color:var(--color-jacarta-d)] text-[color:var(--color-jacarta-l)]">My Blogs</span>
           </h2>
         </div>
         

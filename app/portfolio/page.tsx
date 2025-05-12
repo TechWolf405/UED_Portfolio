@@ -13,16 +13,16 @@ const portfolioItems = [
 
 export default function PortfolioPage() {
   return (
-    <main className="w-full h-full py-16 px-24 overflow-y-auto">
+    <main className="w-full h-full py-16 px-24 overflow-y-auto dark:bg-[color:var(--color-background-d)] bg-[color:var(--color-background-l)] dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
       <div className="container mx-auto">
         <div className="relative mb-16">
           <h2 className="text-4xl font-bold">
-            My <span className="text-[color:var(--color-scampi)]">Portfolio</span>
-            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10">My Work</span>
+            My <span className="dark:text-[color:var(--color-scampi-d)] text-[color:var(--color-scampi-l)]">Portfolio</span>
+            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10 opacity-10 text-6xl whitespace-nowrap dark:text-[color:var(--color-jacarta-d)] text-[color:var(--color-jacarta-l)]">My Work</span>
           </h2>
         </div>
         
-        <p className="port-text text-lg text-center max-w-3xl mx-auto mb-12 text-gray-300">
+        <p className="port-text text-lg text-center max-w-3xl mx-auto mb-12 dark:text-gray-300 text-gray-700">
           Here is some of my work that I've done in various programming languages.
         </p>
         

@@ -33,19 +33,19 @@ const contactItems = [
 
 export default function ContactPage() {
   return (
-    <main className="w-full h-full py-16 px-24 overflow-y-auto">
+    <main className="w-full h-full py-16 px-24 overflow-y-auto dark:bg-[color:var(--color-background-d)] bg-[color:var(--color-background-l)] dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
       <div className="container mx-auto">
         <div className="relative mb-16">
           <h2 className="text-4xl font-bold">
-            Contact <span className="text-[color:var(--color-scampi)]">Me</span>
-            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10">Contact</span>
+            Contact <span className="dark:text-[color:var(--color-scampi-d)] text-[color:var(--color-scampi-l)]">Me</span>
+            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10 opacity-10 text-6xl whitespace-nowrap dark:text-[color:var(--color-jacarta-d)] text-[color:var(--color-jacarta-l)]">Contact</span>
           </h2>
         </div>
         
         <div className="contact-content-con grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="left-contact">
-            <h4 className="text-2xl font-bold mb-4 text-[color:var(--color-downy)]">Contact me here</h4>
-            <p className="text-lg mb-8 text-gray-300">
+            <h4 className="text-2xl font-bold mb-4 dark:text-[color:var(--color-downy-d)] text-[color:var(--color-downy-l)]">Contact me here</h4>
+            <p className="text-lg mb-8 dark:text-gray-300 text-gray-700">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               In, laborum numquam? Quam excepturi perspiciatis quas quasi.
             </p>

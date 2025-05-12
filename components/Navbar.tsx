@@ -15,6 +15,28 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  
+  // Detect theme
+  useEffect(() => {
+    // Check for theme preference (you can adjust this based on how you manage themes)
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setTheme(isDarkMode ? 'dark' : 'light');
+    
+    // Optional: listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isDark = document.documentElement.classList.contains('dark');
+          setTheme(isDark ? 'dark' : 'light');
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
+    
+    return () => observer.disconnect();
+  }, []);
   
   // Handle navigation with transition
   const handleNavigation = (path: string) => {
@@ -52,14 +74,20 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <div className="fixed h-full flex flex-col justify-center px-6 z-10">
-      <div className="bg-black/20 backdrop-blur-sm rounded-full py-8 flex flex-col gap-8">
+    <div className="fixed h-full flex flex-col justify-center px-6 z-999">
+      <div className="dark:bg-black/20 light:bg-white/20 backdrop-blur-sm rounded-full py-8 flex flex-col gap-8">
         {navItems.map((item) => (
           <div
             key={item.id}
             onClick={() => handleNavigation(item.path)}
-            className={`control cursor-pointer w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:bg-gradient-to-r from-[color:var(--color-jacarta)] to-[color:var(--color-scampi)] ${
-              pathname === item.path ? 'bg-gradient-to-r from-[color:var(--color-jacarta)] to-[color:var(--color-scampi)]' : 'bg-black/30'
+            className={`control cursor-pointer w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300 ${
+              pathname === item.path 
+                ? theme === 'light'
+                  ? 'bg-[var(--my-gradient-l)] text-[var(--color-background-d)] dark:text-[var(--color-background-l)] font-bold shadow-md' 
+                  : 'bg-[var(--my-gradient-d)] text-black shadow-md'
+                : theme === 'light'
+                  ? 'bg-black/10 ring-1 ring-black/20 hover:ring-2 hover:ring-black/30 text-[var(--color-text-l)]'
+                  : 'dark:bg-black/30 text-[var(--color-text-l)] hover:bg-black/40'
             }`}
           >
             <i className={item.icon}></i>

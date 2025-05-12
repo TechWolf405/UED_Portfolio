@@ -1,29 +1,56 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
-  /* Portfolio Theme Colors */
-  --color-downy: #63c3ca;
-  --color-jacarta: #36306f;
-  --color-careys-pink: #caa0b2;
-  --color-deluge: #8866a9;
-  --color-wedgewood: #5381a1;
-  --color-affair: #624590;
-  --color-chambray: #3a5b86;
-  --color-scampi: #695fa6;
-  --color-ship-cove: #7d93c6;
-  --color-victoria: #4e428d;
-  --color-background: #0c0c1d;
+  /* Portfolio Theme Colors - Dark Mode */
+  --color-downy-d: #63c3ca;
+  --color-jacarta-d: #36306f;
+  --color-careys-pink-d: #caa0b2;
+  --color-deluge-d: #8866a9;
+  --color-wedgewood-d: #5381a1;
+  --color-affair-d: #624590;
+  --color-chambray-d: #3a5b86;
+  --color-scampi-d: #695fa6;
+  --color-ship-cove-d: #7d93c6;
+  --color-victoria-d: #4e428d;
+  --color-background-d: #0c0c1d;
+  --color-text-d: white;
   
-  /* Custom utility classes */
-  --my-gradient: linear-gradient(to right, var(--color-jacarta), var(--color-scampi));
+  /* Portfolio Theme Colors - Light Mode */
+  --color-downy-l: #79e0e8;
+  --color-jacarta-l: #5751a6;
+  --color-careys-pink-l: #f2c7d6;
+  --color-deluge-l: #aa8ccc;
+  --color-wedgewood-l: #77a7c9;
+  --color-affair-l: #8a71b5;
+  --color-chambray-l: #6b89b7;
+  --color-scampi-l: #9a8fd6;
+  --color-ship-cove-l: #a7b9e6;
+  --color-victoria-l: #7b6dc4;
+  --color-background-l: #f5f5ff;
+  --color-text-l: #272736;
+  
+  /* Custom utility classes - Dark Mode */
+  --my-gradient-d: linear-gradient(to right, var(--color-jacarta-d), var(--color-scampi-d));
+  
+  /* Custom utility classes - Light Mode */
+  --my-gradient-l: linear-gradient(to right, var(--color-jacarta-l), var(--color-scampi-l));
 }
 
 @layer base {
   body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--color-background);
-    color: white;
+    background-color: var(--color-background-l);
+    color: var(--color-text-l);
     transition: all 0.4s ease-in-out;
+
+    @variant dark {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-background-d);
+      color: var(--color-text-d);
+      transition: all 0.4s ease-in-out;
+    }
   }
   
   /* Page transition animations */

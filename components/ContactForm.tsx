@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import MainButton from './MainButton';
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ export default function ContactForm() {
     message: ''
   });
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -19,18 +22,28 @@ export default function ContactForm() {
     }));
   };
   
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. We will get back to you soon!');
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    const toastId = toast.loading('Sending message...');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Failed to send message');
+
+      toast.success('Message sent successfully!', { id: toastId });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      toast.error('Something went wrong. Please try again later.', { id: toastId });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -44,7 +57,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required 
             placeholder="YOUR NAME" 
-            className="w-full p-4 rounded-lg bg-[color:var(--color-jacarta)]/20 border border-gray-700 focus:outline-none focus:border-[color:var(--color-scampi)]"
+            className="w-full p-4 rounded-lg dark:bg-[color:var(--color-jacarta-d)]/20 light:bg-[color:var(--color-jacarta-l)]/20 dark:border-gray-700 light:border-gray-300 border focus:outline-none dark:focus:border-[color:var(--color-scampi-d)] light:focus:border-[color:var(--color-scampi-l)]"
           />
           <input 
             type="email" 
@@ -53,7 +66,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required 
             placeholder="YOUR EMAIL" 
-            className="w-full p-4 rounded-lg bg-[color:var(--color-jacarta)]/20 border border-gray-700 focus:outline-none focus:border-[color:var(--color-scampi)]"
+            className="w-full p-4 rounded-lg dark:bg-[color:var(--color-jacarta-d)]/20 light:bg-[color:var(--color-jacarta-l)]/20 dark:border-gray-700 light:border-gray-300 border focus:outline-none dark:focus:border-[color:var(--color-scampi-d)] light:focus:border-[color:var(--color-scampi-l)]"
           />
         </div>
         <div className="input-control">
@@ -64,7 +77,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required 
             placeholder="ENTER SUBJECT" 
-            className="w-full p-4 rounded-lg bg-[color:var(--color-jacarta)]/20 border border-gray-700 focus:outline-none focus:border-[color:var(--color-scampi)]"
+            className="w-full p-4 rounded-lg dark:bg-[color:var(--color-jacarta-d)]/20 light:bg-[color:var(--color-jacarta-l)]/20 dark:border-gray-700 light:border-gray-300 border focus:outline-none dark:focus:border-[color:var(--color-scampi-d)] light:focus:border-[color:var(--color-scampi-l)]"
           />
         </div>
         <div className="input-control">
@@ -75,11 +88,16 @@ export default function ContactForm() {
             cols={15} 
             rows={8} 
             placeholder="Message Here..." 
-            className="w-full p-4 rounded-lg bg-[color:var(--color-jacarta)]/20 border border-gray-700 focus:outline-none focus:border-[color:var(--color-scampi)]"
+            className="w-full p-4 rounded-lg dark:bg-[color:var(--color-jacarta-d)]/20 light:bg-[color:var(--color-jacarta-l)]/20 dark:border-gray-700 light:border-gray-300 border focus:outline-none dark:focus:border-[color:var(--color-scampi-d)] light:focus:border-[color:var(--color-scampi-l)]"
           ></textarea>
         </div>
         <div className="submit-btn mt-2">
-          <MainButton text="Send Message" icon="fas fa-paper-plane" />
+          <MainButton 
+            text={isSubmitting ? 'Sending...' : 'Send Message'} 
+            icon={isSubmitting ? 'fas fa-spinner fa-spin' : 'fas fa-paper-plane'} 
+            type="submit" 
+            disabled={isSubmitting}
+          />
         </div>
       </form>
     </div>

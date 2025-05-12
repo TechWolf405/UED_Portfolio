@@ -26,10 +26,10 @@ export default function ProgressBar({ title, percentage }: ProgressBarProps) {
       <p className="prog-title capitalize text-lg mb-2">{title}</p>
       <div className="progress-con flex justify-between items-center">
         <p className="prog-text text-sm mb-1">{percentage}%</p>
-        <div className="progress-container">
+        <div className="progress-container h-2 w-full bg-gray-800 dark:bg-gray-800 light:bg-gray-300 rounded-md overflow-hidden">
           <span 
             ref={progressRef} 
-            className="progress-span" 
+            className="progress-span h-full block dark:bg-[var(--my-gradient-d)] light:bg-[var(--my-gradient-l)]" 
             style={{ width: '0%', transition: 'width 1.5s ease-in-out' }}
           ></span>
         </div>
