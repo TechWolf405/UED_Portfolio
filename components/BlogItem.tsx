@@ -5,11 +5,12 @@ interface BlogItemProps {
   imgSrc: string;
   title: string;
   description: string;
+  link: string; // add this
 }
 
-export default function BlogItem({ imgSrc, title, description }: BlogItemProps) {
+export default function BlogItem({ imgSrc, title, description, link }: BlogItemProps) {
   return (
-    <Link href="#" className="blog rounded-xl overflow-hidden bg-[color:var(--color-jacarta)]/20 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-gray-800">
+    <Link href={link} className="blog rounded-xl overflow-hidden bg-[color:var(--color-jacarta)]/20 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl border border-gray-800">
       <div className="h-48 overflow-hidden">
         <Image
           src={imgSrc}
