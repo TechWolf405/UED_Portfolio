@@ -1,15 +1,29 @@
 import PortfolioItem from "@/components/ItemPortfolio";
+import ParallaxBackground from "@/components/Parallax";
 
 // Portfolio data
 const portfolioItems = [
-  { id: 1, imgSrc: '/img/port1.jpg' },
-  { id: 2, imgSrc: '/img/port2.jpg' },
-  { id: 3, imgSrc: '/img/port3.jpg' },
-  { id: 4, imgSrc: '/img/port4.jpg' },
-  { id: 5, imgSrc: '/img/port5.jpg' },
-  { id: 6, imgSrc: '/img/port2.jpg' },
-  { id: 7, imgSrc: '/img/port7.jpg' }
+  {
+    id: 1,
+    imgSrc: '/projtect1.png',
+    title: 'Blog Website with User Authentication & Content Management',
+    technologies: 'Flask, SQLite, WTForms, Bootstrap',
+  },
+  {
+    id: 2,
+    imgSrc: '/blog3.webp',
+    title: 'Plane Crash Search using Bayesian Search Theory',
+    technologies: 'HTML, CSS, LeafletJS, Bayesian Theory',
+  },
+  {
+    id: 3,
+    imgSrc: '/blog2.webp',
+    title: ' Fashion Recommender System (SE Hackathon Top 12)',
+    technologies: 'ResNet, Collaborative Filtering, Django',
+  },
+  // Add more items similarly...
 ];
+
 
 export default function PortfolioPage() {
   return (
@@ -29,9 +43,11 @@ export default function PortfolioPage() {
         <div className="portfolios grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {portfolioItems.map((item) => (
             <PortfolioItem 
-              key={item.id} 
-              imgSrc={item.imgSrc} 
-            />
+            key={item.id} 
+            imgSrc={item.imgSrc}
+            title={item.title}
+            technologies={item.technologies}
+          />          
           ))}
         </div>
       </div>

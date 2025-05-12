@@ -3,91 +3,88 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import MainButton from '@/components/MainButton';
-import { 
-  SiHtml5, 
-  SiCss3, 
-  SiJavascript, 
-  SiReact, 
-  SiNodedotjs, 
-  SiPython 
-} from 'react-icons/si';
+import SkillCard from '@/components/SkillCard';
+import TimelineItem from '@/components/TimelineItem';
 
 const skills = [
-  { 
-    title: 'HTML5', 
-    icon: SiHtml5, 
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-100',
-  },
-  { 
-    title: 'CSS3', 
-    icon: SiCss3, 
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100',
-  },
-  { 
-    title: 'JavaScript', 
-    icon: SiJavascript, 
-    color: 'text-yellow-600',
-    bgColor: 'bg-yellow-100',
-  },
-  { 
-    title: 'ReactJS', 
-    icon: SiReact, 
-    color: 'text-cyan-600',
-    bgColor: 'bg-cyan-100',
-  },
-  { 
-    title: 'NodeJS', 
-    icon: SiNodedotjs, 
-    color: 'text-green-600',
-    bgColor: 'bg-green-100',
-  },
-  { 
-    title: 'Python', 
-    icon: SiPython, 
-    color: 'text-blue-700',
-    bgColor: 'bg-blue-100',
-  },
+  { title: 'Python' },
+  { title: 'HTML/CSS' },
+  { title: 'JavaScript' },
+  { title: 'C/C++' },
+  { title: 'Java' },
+  { title: 'React' },
+  { title: 'Flask' },
+  { title: 'Numpy' },
+  { title: 'Pandas' },
+  { title: 'Matplotlib' },
+  { title: 'Tkinter' },
+  { title: 'Selenium' },
+  { title: 'MySQL' },
+  { title: 'SQLAlchemy' },
+  { title: 'Git' },
+  { title: 'GitHub' },
+  { title: 'Postman' },
+  { title: 'Figma' },
+  { title: 'Justinmind' },
+  { title: 'Canva' },
+  { title: 'Tableau' },
+  { title: 'PowerBi' },
 ];
 
+
+// Timeline data - updated with your education and experience
 const timelineItems = [
   {
-    year: '2010 - present',
-    title: 'Web Developer',
-    company: 'Vircrosoft',
-    description: 'Built and maintained high-performance web applications.',
+    year: '2025 - present',
+    title: 'Exponential Award',
+    company: 'SPIT Alumni Network',
+    description: 'Honored for exceptional personal and academic growth in Computer Engineering.',
   },
   {
-    year: '2008 - 2011',
-    title: 'Software Engineer',
-    company: 'Boogle, Inc.',
-    description: 'Designed scalable backend systems and APIs.',
+    year: '2024',
+    title: 'Topper in Developing Soft Skills',
+    company: 'NPTEL',
+    description: 'Achieved top position in Developing Soft Skills and Personality course by Prof. T. Ravichandran.',
   },
   {
-    year: '2016 - 2017',
-    title: 'C++ Programmer',
-    company: 'Slime Tech',
-    description: 'Created optimized game engines and simulations.',
+    year: '2024',
+    title: 'Completing 100 Days of Code: The Complete Python Pro Bootcamp by Angela Yu',
+    company: 'Udemy',
+    description: 'Gained hands-on experience using various Python libraries like Selenium, Numpy, and Pandas, and made my own Blog Website with User authentication and Content Management.',
   },
   {
-    year: '2009 - 2013',
-    title: 'Business Degree',
-    company: 'Sussex University',
-    description: 'Studied business strategy and project management.',
+    year: '2023',
+    title: 'SE Hackathon Recognition',
+    company: 'SPIT',
+    description: 'Secured a position among TOP 12 teams in SE Hackathon organized by SPIT.',
   },
   {
-    year: '2013 - 2016',
-    title: 'Computer Science Degree',
-    company: 'Brookes University',
-    description: 'Focused on software engineering and AI.',
+    year: '2023',
+    title: 'Topper in Enhancing Soft Skills and Personality',
+    company: 'NPTEL',
+    description: 'Achieved top position in enhancing Soft Skills and Personality course by Prof. T. Ravichandran.',
   },
   {
-    year: '2017 - present',
-    title: '3D Animation',
-    company: 'Brighton University',
-    description: 'Explored interactive media and visual storytelling.',
+    year: '2022',
+    title: 'B.Tech in Computer Engineering',
+    company: 'Sardar Patel Institute of Technology',
+    description: 'CGPA: 7.68. Focusing on computer engineering fundamentals and expanding software development skills.',
   },
+  {
+    year: '2022',
+    title: 'HSC Grade 12',
+    company: 'Shri T.P. Bhatia College of Science',
+    description: 'Completed Higher Secondary Certificate with 73.67%, with focus on science and mathematics.',
+  },
+  {
+    year: '2020',
+    title: 'SSC Grade 10',
+    company: 'Kid\'s Land High School',
+    description: 'Completed Secondary School Certificate with an excellent score of 95.64%.',
+  },
+  
+  
+  
 ];
 
 export default function AboutPage() {
@@ -149,90 +146,58 @@ export default function AboutPage() {
             <h4 className="text-2xl font-bold mb-4 text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
               Information About me
             </h4>
-            <p className="text-lg mb-6 dark:text-gray-300 text-gray-700">
-              I'm a passionate developer who loves building interactive and scalable web applications. 
-              With a strong foundation in both frontend and backend technologies, I thrive in full-stack environments.
-              <br /><br />
-              I also enjoy exploring creative disciplines like 3D animation and visual storytelling, which bring a unique flair to my projects.
+            <p className="text-lg mb-6 text-gray-300">
+              I am a motivated Software Developer and BTech student in Computer Engineering with a 
+              strong foundation in Python for backend development and HTML, CSS, and JavaScript for 
+              frontend work. <br /> <br /> I have hands-on experience using various Python libraries 
+              like Selenium, Numpy, and Pandas, and I'm comfortable integrating APIs. Currently, 
+              I'm diving into React, aiming to become a full-stack developer. I'm passionate about 
+              leveraging technology to create impactful solutions and enjoy collaborating on projects 
+              that challenge me to grow my skills.
             </p>
-            <MainButton text="Download CV" icon="fas fa-download" />
+            <div className="btn-con">
+              <MainButton text="Download CV" icon="fas fa-download" />
+            </div>
           </motion.div>
-
-          {/* Stats */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
-          >
-            {[
-              { label: 'Projects Completed', value: '650+' },
-              { label: 'Years of Experience', value: '10+' },
-              { label: 'Happy Clients', value: '300+' },
-              { label: 'Customer Reviews', value: '400+' },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.06)"
-                }}
-                className="p-6 border rounded-xl 
-                dark:border-gray-700 border-gray-300 
-                bg-white/60 dark:bg-gray-800/60 
-                backdrop-blur-md 
-                transition-all duration-300 
-                hover:border-[color:var(--color-scampi-l)] 
-                dark:hover:border-[color:var(--color-scampi-d)]"
-              >
-                <p className="text-3xl font-extrabold 
-                text-[color:var(--color-scampi-l)] 
-                dark:text-[color:var(--color-scampi-d)]">
-                  {item.value}
-                </p>
-                <p className="text-lg">{item.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h4 className="text-2xl font-bold mb-8 text-center 
-          text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
-            My Skills
-          </h4>
-          <div className="flex flex-wrap justify-center gap-6">
-            {skills.map((skill, index) => {
-              const SkillIcon = skill.icon;
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{ 
-                    scale: 1.1,
-                    rotate: 5,
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`flex items-center gap-3 px-5 py-3 rounded-full 
-                  ${skill.bgColor} ${skill.color} 
-                  font-semibold shadow-md cursor-pointer 
-                  transition-all duration-300 group`}
-                >
-                  <SkillIcon className="text-2xl group-hover:animate-bounce" />
-                  <span>{skill.title}</span>
-                </motion.div>
-              );
-            })}
+          
+          <div className="right-about grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
+              <div className="abt-text">
+                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">7.68</p>
+                <p className="small-text text-lg">CGPA <br /> BTech</p>
+              </div>
+            </div>
+            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
+              <div className="abt-text">
+                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">95.6%</p>
+                <p className="small-text text-lg">SSC <br /> Grade 10</p>
+              </div>
+            </div>
+            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
+              <div className="abt-text">
+                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">Top 12</p>
+                <p className="small-text text-lg">SE <br /> Hackathon</p>
+              </div>
+            </div>
+            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
+              <div className="abt-text">
+                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">2025</p>
+                <p className="small-text text-lg">Exponential <br /> Award</p>
+              </div>
+            </div>
           </div>
-        </motion.div>
-
+        </div>
+        
+        {/* Skills section */}
+        <div className="about-stats mb-16">
+          <h4 className="stat-title text-2xl font-bold mb-8 text-[color:var(--color-downy)]">My Skills</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {skills.map((skill, index) => (
+              <SkillCard key={index} title={skill.title} />
+            ))}
+          </div>
+        </div>
+        
         {/* Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

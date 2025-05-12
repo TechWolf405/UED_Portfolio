@@ -7,27 +7,27 @@ const contactItems = [
   {
     icon: 'fas fa-map-marker-alt',
     title: 'Location',
-    value: 'London, United Kingdom',
+    value: 'Mumbai, India',
   },
   {
     icon: 'fas fa-envelope',
     title: 'Email',
-    value: 'maclinzuniversal@gmail.com',
+    value: 'anushka.jadhav22@spit.ac.in | anushkajadhavwrk@gmail.com',
   },
   {
     icon: 'fas fa-user-graduate',
     title: 'Education',
-    value: 'Sussex University, East Sussex',
+    value: 'Sardar Patel Institute of Technology, Mumbai',
   },
   {
     icon: 'fas fa-phone',
     title: 'Mobile Number',
-    value: '07522670617',
+    value: '9321817880',
   },
   {
     icon: 'fas fa-globe-africa',
     title: 'Languages',
-    value: 'Afrikaans, English, Spanish',
+    value: 'English, Hindi, Marathi',
   },
 ];
 
@@ -46,8 +46,8 @@ export default function ContactPage() {
           <div className="left-contact">
             <h4 className="text-2xl font-bold mb-4 dark:text-[color:var(--color-downy-d)] text-[color:var(--color-downy-l)]">Contact me here</h4>
             <p className="text-lg mb-8 dark:text-gray-300 text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              In, laborum numquam? Quam excepturi perspiciatis quas quasi.
+              Feel free to reach out for collaborations, questions, or just to say hi — I would love to connect!
+            You can contact me through the form below or via my social media links.
             </p>
             
             <div className="contact-info space-y-6 mb-8">
