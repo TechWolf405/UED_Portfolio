@@ -86,8 +86,8 @@ export default function Navbar() {
                   ? 'bg-[var(--my-gradient-l)] text-[var(--color-background-d)] dark:text-[var(--color-background-l)] font-bold shadow-md' 
                   : 'bg-[var(--my-gradient-d)] text-black shadow-md'
                 : theme === 'light'
-                  ? 'bg-black/10 ring-1 ring-black/20 hover:ring-2 hover:ring-black/30 text-[var(--color-text-l)]'
-                  : 'dark:bg-black/30 text-[var(--color-text-l)] hover:bg-black/40'
+                  ? 'bg-black/10 ring-1 ring-black/20 hover:ring-2 hover:ring-black/30 text-white/50'
+                  : 'dark:bg-black/30 text-gray-600 hover:bg-black/40'
             }`}
           >
             <i className={item.icon}></i>

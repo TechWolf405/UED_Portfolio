@@ -31,7 +31,6 @@ const skills = [
   { title: 'PowerBi' },
 ];
 
-
 // Timeline data - updated with your education and experience
 const timelineItems = [
   {
@@ -82,9 +81,6 @@ const timelineItems = [
     company: 'Kid\'s Land High School',
     description: 'Completed Secondary School Certificate with an excellent score of 95.64%.',
   },
-  
-  
-  
 ];
 
 export default function AboutPage() {
@@ -108,8 +104,12 @@ export default function AboutPage() {
       {/* Parallax Background */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="fixed inset-0 z-0 bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 
-        dark:from-purple-900/20 dark:via-pink-900/20 dark:to-blue-900/20 opacity-30 pointer-events-none"
+        className="fixed inset-0 z-0 
+        dark:bg-gradient-to-br dark:from-[color:var(--color-jacarta-d)]/20 
+        dark:via-[color:var(--color-deluge-d)]/20 dark:to-[color:var(--color-ship-cove-d)]/20
+        bg-gradient-to-br from-[color:var(--color-careys-pink-l)]/30 
+        via-[color:var(--color-ship-cove-l)]/30 to-[color:var(--color-wedgewood-l)]/30 
+        opacity-30 pointer-events-none"
       />
 
       <div ref={containerRef} className="container mx-auto relative z-10">
@@ -122,7 +122,8 @@ export default function AboutPage() {
         >
           <motion.h2 
             style={{ y: textY }}
-            className="text-4xl font-bold text-center"
+            className="text-4xl font-bold text-center 
+            dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]"
           >
             About <span className="text-[color:var(--color-scampi-l)] dark:text-[color:var(--color-scampi-d)]">me</span>
             <motion.span 
@@ -143,10 +144,12 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-2xl font-bold mb-4 text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
+            <h4 className="text-2xl font-bold mb-4 
+            text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
               Information About me
             </h4>
-            <p className="text-lg mb-6 text-gray-300">
+            <p className="text-lg mb-6 
+            dark:text-gray-300 text-gray-700">
               I am a motivated Software Developer and BTech student in Computer Engineering with a 
               strong foundation in Python for backend development and HTML, CSS, and JavaScript for 
               frontend work. <br /> <br /> I have hands-on experience using various Python libraries 
@@ -161,36 +164,43 @@ export default function AboutPage() {
           </motion.div>
           
           <div className="right-about grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
-              <div className="abt-text">
-                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">7.68</p>
-                <p className="small-text text-lg">CGPA <br /> BTech</p>
+            {[
+              { value: '7.68', label: 'CGPA\nBTech' },
+              { value: '95.6%', label: 'SSC\nGrade 10' },
+              { value: 'Top 12', label: 'SE\nHackathon' },
+              { value: '2025', label: 'Exponential\nAward' }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="about-item border 
+                dark:border-gray-700 border-gray-300 
+                p-8 rounded-lg 
+                dark:bg-gradient-to-r dark:from-[color:var(--color-jacarta-d)]/30 
+                dark:to-[color:var(--color-deluge-d)]/30
+                bg-gradient-to-r from-[color:var(--color-careys-pink-l)]/30 
+                to-[color:var(--color-ship-cove-l)]/30
+                transition-all duration-300 hover:transform hover:translate-y-[-5px]"
+              >
+                <div className="abt-text">
+                  <p className="large-text text-4xl font-extrabold 
+                  text-[color:var(--color-scampi-l)] dark:text-[color:var(--color-scampi-d)]">
+                    {item.value}
+                  </p>
+                  <p className="small-text text-lg dark:text-gray-300 text-gray-700">
+                    {item.label}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
-              <div className="abt-text">
-                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">95.6%</p>
-                <p className="small-text text-lg">SSC <br /> Grade 10</p>
-              </div>
-            </div>
-            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
-              <div className="abt-text">
-                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">Top 12</p>
-                <p className="small-text text-lg">SE <br /> Hackathon</p>
-              </div>
-            </div>
-            <div className="about-item border border-gray-700 p-8 rounded-lg bg-gradient-to-r from-[color:var(--color-background)] to-[color:var(--color-jacarta)]/30 transition-all duration-300 hover:transform hover:translate-y-[-5px]">
-              <div className="abt-text">
-                <p className="large-text text-4xl font-extrabold text-[color:var(--color-scampi)]">2025</p>
-                <p className="small-text text-lg">Exponential <br /> Award</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         
         {/* Skills section */}
         <div className="about-stats mb-16">
-          <h4 className="stat-title text-2xl font-bold mb-8 text-[color:var(--color-downy)]">My Skills</h4>
+          <h4 className="stat-title text-2xl font-bold mb-8 
+          text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
+            My Skills
+          </h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <SkillCard key={index} title={skill.title} />
@@ -210,7 +220,8 @@ export default function AboutPage() {
             My Timeline
           </h4>
           <div className="relative before:content-[''] before:absolute before:top-0 before:bottom-0 
-          before:w-0.5 before:bg-[color:var(--color-scampi-l)] 
+          before:w-0.5 
+          before:bg-[color:var(--color-scampi-l)] 
           dark:before:bg-[color:var(--color-scampi-d)] 
           before:left-1/2 before:-translate-x-1/2">
             {timelineItems.map((item, index) => (
@@ -237,20 +248,26 @@ export default function AboutPage() {
                   
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white dark:bg-gray-800 
-                    border dark:border-gray-700 
-                    rounded-xl p-6 shadow-lg 
+                    className="
+                    dark:bg-[color:var(--color-jacarta-d)] bg-white 
+                    dark:border-[color:var(--color-deluge-d)] border-gray-200
+                    border rounded-xl p-6 shadow-lg 
                     transition-all duration-300"
                   >
-                    <p className="text-sm text-gray-400 mb-1">{item.year}</p>
-                    <h5 className="text-xl font-semibold mb-1">
+                    <p className="text-sm 
+                    dark:text-gray-400 text-gray-500 
+                    mb-1">{item.year}</p>
+                    <h5 className="text-xl font-semibold mb-1 
+                    dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
                       {item.title} 
-                      <span className="text-[color:var(--color-scampi-l)] 
+                      <span className="
+                      text-[color:var(--color-scampi-l)] 
                       dark:text-[color:var(--color-scampi-d)]"> 
                         - {item.company}
                       </span>
                     </h5>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="
+                    dark:text-gray-300 text-gray-700">
                       {item.description}
                     </p>
                   </motion.div>

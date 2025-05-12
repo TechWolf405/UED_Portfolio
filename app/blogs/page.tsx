@@ -1,4 +1,4 @@
-import BlogItem from '@/components/BlogItem';
+import { BlogItem } from '@/components/BlogItem';
 // import ParallaxBackground from '@/components/Parallax';
 import ParallaxBackground from '@/components/Parallax';
 
@@ -30,13 +30,19 @@ const blogItems = [
 
 export default function BlogsPage() {
   return (
-    <main className="w-full h-full py-16 px-24 overflow-y-auto dark:bg-[color:var(--color-background-d)] bg-[color:var(--color-background-l)] dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
+    <main className="w-full h-full py-16 px-4 sm:px-12 lg:px-24 overflow-y-auto 
+      dark:bg-[color:var(--color-background-d)] bg-[color:var(--color-background-l)] 
+      dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
       <div className="container mx-auto">
-        <div className="relative mb-16">
-          <h2 className="text-4xl font-bold">
+        <div className="relative mb-16 text-center">
+          <h2 className="text-4xl font-bold relative z-10">
             My <span className="dark:text-[color:var(--color-scampi-d)] text-[color:var(--color-scampi-l)]">Blogs</span>
-            <span className="bg-text absolute -top-8 left-1/2 transform -translate-x-1/2 -z-10 opacity-10 text-6xl whitespace-nowrap dark:text-[color:var(--color-jacarta-d)] text-[color:var(--color-jacarta-l)]">My Blogs</span>
           </h2>
+          <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+            -z-10 opacity-10 text-6xl sm:text-8xl whitespace-nowrap 
+            dark:text-[color:var(--color-jacarta-d)] text-[color:var(--color-jacarta-l)]">
+            My Blogs
+          </span>
         </div>
         
         <div className="blogs grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -46,7 +52,7 @@ export default function BlogsPage() {
               imgSrc={blog.imgSrc}
               title={blog.title}
               description={blog.description}
-              link={blog.link} // pass link here
+              link={blog.link}
             />
           ))}
         </div>
