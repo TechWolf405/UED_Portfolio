@@ -18,6 +18,7 @@ export default function HeroSection() {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
+    console.log(isImageLoaded);
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
@@ -131,7 +132,7 @@ export default function HeroSection() {
           >
             I specialize in creating intuitive interfaces and responsive websites
             that deliver exceptional user experiences across all devices.
-            Let's build something amazing together!
+            Let&apos;s build something amazing together!
           </motion.p>
 
           {/* Interactive Buttons */}

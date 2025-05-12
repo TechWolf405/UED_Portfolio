@@ -22,7 +22,7 @@ export default function Navbar() {
     // Check for theme preference (you can adjust this based on how you manage themes)
     const isDarkMode = document.documentElement.classList.contains('dark');
     setTheme(isDarkMode ? 'dark' : 'light');
-    
+    console.log(isTransitioning);
     // Optional: listen for theme changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {

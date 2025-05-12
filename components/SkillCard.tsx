@@ -1,11 +1,9 @@
-'use client';
-
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   FaPython,
   FaHtml5,
   FaCss3Alt,
-  FaJs,
   FaReact,
   FaJava,
   FaGitAlt,
@@ -27,11 +25,18 @@ import {
 } from 'react-icons/si';
 import { BsQuestionCircle } from 'react-icons/bs';
 
+// Define the type for the icon mapping
+type IconMapType = {
+  [key: string]: React.ReactNode;
+};
+
+// Define the props interface for the SkillCard component
 interface SkillCardProps {
   title: string;
 }
 
-const iconMap: Record<string, JSX.Element> = {
+// Create the icon mapping
+const iconMap: IconMapType = {
   Python: <FaPython className="text-yellow-400 text-4xl" />,
   'HTML/CSS': (
     <div className="flex space-x-1">
@@ -57,7 +62,7 @@ const iconMap: Record<string, JSX.Element> = {
   Tableau: <SiTableau className="text-blue-400 text-4xl" />,
 };
 
-export default function SkillCard({ title }: SkillCardProps) {
+const SkillCard: React.FC<SkillCardProps> = ({ title }) => {
   return (
     <motion.div
       whileHover={{
@@ -102,4 +107,6 @@ export default function SkillCard({ title }: SkillCardProps) {
       </div>
     </motion.div>
   );
-}
+};
+
+export default SkillCard;

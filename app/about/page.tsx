@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import MainButton from '@/components/MainButton';
 import SkillCard from '@/components/SkillCard';
-import TimelineItem from '@/components/TimelineItem';
 
 const skills = [
   { title: 'Python' },
@@ -153,8 +152,8 @@ export default function AboutPage() {
               I am a motivated Software Developer and BTech student in Computer Engineering with a 
               strong foundation in Python for backend development and HTML, CSS, and JavaScript for 
               frontend work. <br /> <br /> I have hands-on experience using various Python libraries 
-              like Selenium, Numpy, and Pandas, and I'm comfortable integrating APIs. Currently, 
-              I'm diving into React, aiming to become a full-stack developer. I'm passionate about 
+              like Selenium, Numpy, and Pandas, and I&apos;m comfortable integrating APIs. Currently, 
+              I&apos;m diving into React, aiming to become a full-stack developer. I&apos;m passionate about 
               leveraging technology to create impactful solutions and enjoy collaborating on projects 
               that challenge me to grow my skills.
             </p>

@@ -37,7 +37,7 @@ export default function PortfolioPage() {
         </div>
         
         <p className="port-text text-lg text-center max-w-3xl mx-auto mb-16 dark:text-gray-300 text-gray-700">
-          Here is some of my work that I've done in various programming languages and technologies, showcasing my skills and passion for creating innovative solutions.
+          Here is some of my work that I&apos;ve done in various programming languages and technologies, showcasing my skills and passion for creating innovative solutions.
         </p>
         
         <div className="portfolios grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

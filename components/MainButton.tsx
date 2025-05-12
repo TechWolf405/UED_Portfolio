@@ -21,6 +21,7 @@ export default function MainButton({ text, icon, href = "#", onClick, type = 'bu
       </span>
     </div>
   );
+  console.log(href);
 
   return (
     <button onClick={onClick} type={type} className="inline-block" disabled={disabled}>

@@ -1,6 +1,5 @@
 import { BlogItem } from '@/components/BlogItem';
-// import ParallaxBackground from '@/components/Parallax';
-import ParallaxBackground from '@/components/Parallax';
+
 
 // Blog data
 const blogItems = [

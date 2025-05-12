@@ -2,7 +2,7 @@ import './globals.css';
 import { Poppins } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import ThemeToggle from '@/components/ThemeToggle';
-import PageTransition from '@/components/PageTransition';
+// import PageTransition from '@/components/PageTransition';
 import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
