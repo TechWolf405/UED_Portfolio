@@ -145,7 +145,7 @@ export default function AboutPage() {
           >
             <h4 className="text-2xl font-bold mb-4 
             text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
-              Information About Me
+              Information About me
             </h4>
             <p className="text-lg mb-6 
             dark:text-gray-300 text-gray-700">
@@ -158,7 +158,7 @@ export default function AboutPage() {
               that challenge me to grow my skills.
             </p>
             <div className="btn-con">
-              <MainButton text="Download CV" icon="fas fa-download" href='/AnushkaJadhav_resume_28032025.pdf' />
+              <MainButton text="Download CV" icon="fas fa-download" />
             </div>
           </motion.div>
           
@@ -207,56 +207,67 @@ export default function AboutPage() {
           </div>
         </div>
         
-        {/* Timeline */}
+        {/* Timeline - Responsive version */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mb-16"
         >
           <h4 className="text-2xl font-bold mb-8 text-center 
           text-[color:var(--color-downy-l)] dark:text-[color:var(--color-downy-d)]">
             My Timeline
           </h4>
-          <div className="relative before:content-[''] before:absolute before:top-0 before:bottom-0 
-          before:w-0.5 
-          before:bg-[color:var(--color-scampi-l)] 
-          dark:before:bg-[color:var(--color-scampi-d)] 
-          before:left-1/2 before:-translate-x-1/2">
+          
+          {/* Timeline container with responsive changes */}
+          <div className="relative 
+            before:content-[''] before:absolute before:top-0 before:bottom-0 
+            before:w-0.5 before:bg-[color:var(--color-scampi-l)] 
+            dark:before:bg-[color:var(--color-scampi-d)] 
+            before:left-0 md:before:left-1/2 md:before:-translate-x-1/2">
+            
             {timelineItems.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ 
                   duration: 0.6,
-                  delay: index * 0.2
+                  delay: index * 0.1
                 }}
                 viewport={{ once: true }}
-                className={`mb-8 flex items-center w-full 
-                ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+                className={`mb-8 flex items-center w-full
+                  ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}
+                `}
               >
-                <div className="w-1/2"></div>
-                <div className="relative w-1/2 pl-8 pr-4 py-4">
+                {/* This div is hidden on mobile but shown on md+ screens */}
+                <div className="hidden md:block md:w-1/2"></div>
+                
+                {/* Timeline content - takes full width on mobile, half width on md+ screens */}
+                <div className="relative w-full md:w-1/2 pl-8 pr-4 py-4">
+                  {/* Timeline dot */}
                   <div className="absolute w-4 h-4 
-                  bg-[color:var(--color-scampi-l)] 
-                  dark:bg-[color:var(--color-scampi-d)] 
-                  rounded-full 
-                  top-1/2 -translate-y-1/2 
-                  -left-2 z-10" />
+                    bg-[color:var(--color-scampi-l)] 
+                    dark:bg-[color:var(--color-scampi-d)] 
+                    rounded-full 
+                    top-1/2 -translate-y-1/2 
+                    -left-2 z-10" 
+                  />
                   
+                  {/* Timeline content card */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="
                     dark:bg-[color:var(--color-jacarta-d)] bg-white 
                     dark:border-[color:var(--color-deluge-d)] border-gray-200
-                    border rounded-xl p-6 shadow-lg 
+                    border rounded-xl p-4 md:p-6 shadow-lg 
                     transition-all duration-300"
                   >
                     <p className="text-sm 
                     dark:text-gray-400 text-gray-500 
                     mb-1">{item.year}</p>
-                    <h5 className="text-xl font-semibold mb-1 
+                    <h5 className="text-lg md:text-xl font-semibold mb-1 
                     dark:text-[color:var(--color-text-d)] text-[color:var(--color-text-l)]">
                       {item.title} 
                       <span className="
@@ -266,7 +277,7 @@ export default function AboutPage() {
                       </span>
                     </h5>
                     <p className="
-                    dark:text-gray-300 text-gray-700">
+                    dark:text-gray-300 text-gray-700 text-sm md:text-base">
                       {item.description}
                     </p>
                   </motion.div>

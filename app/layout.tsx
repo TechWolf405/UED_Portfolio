@@ -2,7 +2,6 @@ import './globals.css';
 import { Poppins } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import ThemeToggle from '@/components/ThemeToggle';
-// import PageTransition from '@/components/PageTransition';
 import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
@@ -32,7 +31,7 @@ export default function RootLayout({
       <body className={poppins.className} data-theme='light'>
         <div className="flex min-h-screen">
           <Navbar />
-          <div className="flex-1 relative overflow-y-auto">
+          <div className="flex-1 relative overflow-y-auto pb-16 md:pb-0">
             {children}
             <Toaster position="top-center" reverseOrder={false} />
             <ThemeToggle />

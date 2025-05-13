@@ -38,7 +38,7 @@ export default function ThemeToggle() {
   
   return (
     <div 
-      className={`theme-btn fixed bottom-8 right-8 w-12 h-12 rounded-full cursor-pointer flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 shadow-lg z-10
+      className={`theme-btn fixed bottom-4 right-8 w-12 h-12 rounded-full cursor-pointer flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 shadow-lg z-1000
                  ${isDark 
                    ? "bg-gradient-to-r from-[color:var(--color-jacarta-d)] to-[color:var(--color-scampi-d)] text-white" 
                    : "bg-white border-2 border-[color:var(--color-scampi-l)] text-[color:var(--color-jacarta-l)]"}`}
