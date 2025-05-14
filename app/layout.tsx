@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Portfolio | Solano Milan Diaz',
-  description: 'Professional portfolio of Solano Milan Diaz, a Web Developer',
+  title: 'Portfolio | Anushka Jadhav',
+  description: 'Professional portfolio of Anushka Jadhav, a Web Developer',
 };
 
 export default function RootLayout({
